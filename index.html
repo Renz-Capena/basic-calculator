@@ -30,12 +30,12 @@
         <br>
         <button>.</button>
         <button>0</button>
-        <button>C</button>
-        <button>=</button>
-        <br>
         <button>(</button>
         <button>)</button>
+        <br>
         <button>←</button>
+        <button>C</button>
+        <button>=</button>
     </div>
 
     <script>
@@ -49,7 +49,13 @@
                         result.value = result.value.slice(0,-1);
                         break;
                     case "=":
+                        try{
                         result.value = eval(result.value);
+                        }catch{
+                            alert("Something Wrong!!")
+
+                            result.value = '';
+                        }
                         break;
                     case "C":
                         result.value = '';
