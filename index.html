@@ -12,32 +12,32 @@
     <h4>by: <a href="https://www.facebook.com/renzcollin.capena/">Renz Collin Capeña</a></h4>
 
     <div class="container">
-        <input type="text" id="result">
+        <div id="result"></div>
         <br>
         <button>1</button>
         <button>2</button>
         <button>3</button>
-        <button>*</button>
+        <button class="operator">*</button>
         <br>
         <button>4</button>
         <button>5</button>
         <button>6</button>
-        <button>-</button>
+        <button class="operator">-</button>
         <br>
         <button>7</button>
         <button>8</button>
         <button>9</button>
-        <button>+</button>
+        <button class="operator">+</button>
         <br>
         <button>0</button>
         <button>(</button>
         <button>)</button>
-        <button>/</button>
+        <button class="operator">/</button>
         <br>
         <button>.</button>
-        <button>←</button>
-        <button>C</button>
-        <button>=</button>
+        <button class="btn_c">←</button>
+        <button class="btn_c">C</button>
+        <button class="btn_equal">=</button>
     </div>
 
     <script>
@@ -48,22 +48,22 @@
             btn_1.addEventListener('click',()=>{
                 switch(btn_1.innerHTML){
                     case "←":
-                        result.value = result.value.slice(0,-1);
+                        result.innerHTML = result.innerHTML.slice(0,-1);
                         break;
                     case "=":
                         try{
-                        result.value = eval(result.value);
+                        result.innerHTML = eval(result.innerHTML);
                         }catch{
                             alert("Something Wrong!!")
 
-                            result.value = '';
+                            result.innerHTML = '';
                         }
                         break;
                     case "C":
-                        result.value = '';
+                        result.innerHTML = '';
                         break;
                     default:
-                        result.value = result.value + btn_1.innerHTML;
+                        result.innerHTML = result.innerHTML + btn_1.innerHTML;
                         break;
                 }
             })
